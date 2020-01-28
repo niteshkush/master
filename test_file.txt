@@ -1,1 +1,3 @@
 This is the file pushed by other branch
+
+read this file
