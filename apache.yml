@@ -1,0 +1,19 @@
+---
+- name: Install apache
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Install apache
+    yum:
+      name: httpd
+      state: present
+
+- name: copy web file on server
+  copy:
+    src: /root/nitesh.repo/master/host_vars/index.html
+    dest: /var/www/html/index.html
+
+#  handlers:
+#  - name: restart apache
+#    service: name=httpd state=running
